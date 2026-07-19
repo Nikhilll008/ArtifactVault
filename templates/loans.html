@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loan Tracking — ArtifactVault</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="24" cy="24" r="22" stroke="#B08D57" stroke-width="2"/>
+        <path d="M24 8 L29 16 H19 Z" fill="#4A3428"/>
+        <rect x="20" y="16" width="8" height="4" fill="#4A3428"/>
+        <path d="M14 38 V24 H34 V38" stroke="#4A3428" stroke-width="2" fill="none"/>
+        <path d="M14 38 H34" stroke="#B08D57" stroke-width="2"/>
+        <path d="M19 38 V30 H29 V38" stroke="#B08D57" stroke-width="1.6" fill="none"/>
+      </svg>
+      <span class="brand-text">
+        <span class="name">ArtifactVault</span>
+        <span class="tag">Maharashtra Heritage Museum</span>
+      </span>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="catalog.html">Catalog</a></li>
+        <li><a href="about.html">About Museum</a></li>
+        <li><a href="dashboard.html">Curator Dashboard</a></li>
+        <li><a href="loans.html" class="active">Loan Records</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#4A3428" stroke-width="2"><path d="M3 6 H21 M3 12 H21 M3 18 H21" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+  <div class="page-header">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Loan Tracking</div>
+      <h1>Loan Tracking</h1>
+      <p class="sub">Monitor artifacts currently on loan to partner institutions, schools and cultural bodies, along with due dates and return status.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="tabs">
+        <button type="button" class="tab-btn active" data-tab="Active">Active &amp; Overdue</button>
+        <button type="button" class="tab-btn" data-tab="Returned">Returned</button>
+        <button type="button" class="tab-btn" data-tab="All">All Records</button>
+      </div>
+
+      <div class="loans-toolbar">
+        <span class="count" id="loanResultCount"></span>
+        <div class="search-input-sm">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M19.5 19.5 L15 15" stroke-linecap="round"/></svg>
+          <input type="text" id="loanSearch" placeholder="Search by artifact, borrower or loan ID…">
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Loan ID</th>
+              <th>Artifact</th>
+              <th>Borrowing Institution</th>
+              <th>Loan Date</th>
+              <th>Due Date</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="loansTableBody"></tbody>
+        </table>
+      </div>
+      <div class="empty-state" id="loansEmptyState">
+        <h3>No loan records found</h3>
+        <p>Try a different search term or switch tabs.</p>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand">
+          <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="22" stroke="#B08D57" stroke-width="2"/>
+            <path d="M24 8 L29 16 H19 Z" fill="#D9C7A3"/>
+            <rect x="20" y="16" width="8" height="4" fill="#D9C7A3"/>
+            <path d="M14 38 V24 H34 V38" stroke="#D9C7A3" stroke-width="2" fill="none"/>
+          </svg>
+          <span class="brand-text">
+            <span class="name">ArtifactVault</span>
+            <span class="tag">Maharashtra Heritage Museum</span>
+          </span>
+        </a>
+        <p>A digital catalog and heritage item management system documenting the cultural and martial history of Maharashtra.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="catalog.html">Public Catalog</a></li>
+          <li><a href="about.html">About the Museum</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Curator Access</h4>
+        <ul>
+          <li><a href="dashboard.html">Curator Dashboard</a></li>
+          <li><a href="loans.html">Loan Tracking</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit Us</h4>
+        <ul>
+          <li>Heritage Museum Road, Shivajinagar</li>
+          <li>Pune, Maharashtra – 411005</li>
+          <li>Tue–Sun, 10:00 AM – 5:30 PM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span class="current-year">2026</span> ArtifactVault — Maharashtra Heritage Museum. All rights reserved.</span>
+      <span>Academic Project · Department of Computer Applications</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/api.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

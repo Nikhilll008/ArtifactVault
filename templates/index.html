@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ArtifactVault — Maharashtra Heritage Museum</title>
+<meta name="description" content="ArtifactVault is the digital catalog and heritage item management system of the Maharashtra Heritage Museum, preserving Maratha-era artifacts, coins, fort models, sculptures, manuscripts and textiles.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!--  NAVBAR -->
+<header class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="24" cy="24" r="22" stroke="#B08D57" stroke-width="2"/>
+        <path d="M24 8 L29 16 H19 Z" fill="#4A3428"/>
+        <rect x="20" y="16" width="8" height="4" fill="#4A3428"/>
+        <path d="M14 38 V24 H34 V38" stroke="#4A3428" stroke-width="2" fill="none"/>
+        <path d="M14 38 H34" stroke="#B08D57" stroke-width="2"/>
+        <path d="M19 38 V30 H29 V38" stroke="#B08D57" stroke-width="1.6" fill="none"/>
+      </svg>
+      <span class="brand-text">
+        <span class="name">ArtifactVault</span>
+        <span class="tag">Maharashtra Heritage Museum</span>
+      </span>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="catalog.html">Catalog</a></li>
+        <li><a href="about.html">About Museum</a></li>
+        <li><a href="dashboard.html">Curator Dashboard</a></li>
+        <li><a href="loans.html">Loan Records</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#4A3428" stroke-width="2"><path d="M3 6 H21 M3 12 H21 M3 18 H21" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+  <!--  HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <span class="eyebrow">Digital Heritage Initiative</span>
+        <h1>Preserving Maharashtra's Living Heritage, One Artifact at a Time</h1>
+        <p class="lede">ArtifactVault is the official digital catalog of the Maharashtra Heritage Museum — documenting Maratha-era weaponry, coinage, fort architecture, temple sculpture, manuscripts and textiles for visitors, students and researchers.</p>
+        <div class="hero-actions">
+          <a href="catalog.html" class="btn btn-primary">Explore the Catalog</a>
+          <a href="about.html" class="btn btn-outline">About the Museum</a>
+        </div>
+        <div class="hero-stats-strip">
+          <div><strong id="statTotal">0</strong><span>Artifacts Catalogued</span></div>
+          <div><strong id="statLoans">0</strong><span>Active Loans</span></div>
+          <div><strong id="statCurators">0</strong><span>Registered Curators</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 420 360" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="0" width="420" height="360" fill="#EFE7D6"/>
+          <rect x="0" y="290" width="420" height="70" fill="#D9C7A3"/>
+          
+          <path d="M10 300 L10 230 L40 230 L40 200 L60 200 L60 230 L90 230 L90 180 L120 180 L120 230 L150 230 L150 210 L170 210 L170 230 L200 230 L200 160 L230 160 L230 230 L260 230 L260 195 L285 195 L285 230 L320 230 L320 215 L345 215 L345 230 L370 230 L370 250 L400 250 L400 300 Z" fill="#4A3428"/>
+          <rect x="55" y="190" width="10" height="14" fill="#4A3428"/>
+          <rect x="115" y="170" width="10" height="14" fill="#4A3428"/>
+          <rect x="225" y="150" width="10" height="14" fill="#4A3428"/>
+          <rect x="280" y="185" width="10" height="14" fill="#4A3428"/>
+          <!-- flag -->
+          <path d="M230 160 L230 140" stroke="#4A3428" stroke-width="2"/>
+          <path d="M230 140 L250 147 L230 154 Z" fill="#B08D57"/>
+          <!-- sun -->
+          <circle cx="340" cy="90" r="30" fill="#D9C7A3" opacity="0.8"/>
+          <!-- birds -->
+          <path d="M120 80 q6 -8 12 0 q6 -8 12 0" stroke="#4A3428" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <path d="M160 60 q6 -8 12 0 q6 -8 12 0" stroke="#4A3428" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEARCH BAND-->
+  <section class="search-band">
+    <div class="container">
+      <span class="label">Search the Collection</span>
+      <form id="heroSearchForm" class="search-form" role="search">
+        <input type="text" id="heroSearchInput" placeholder="Search by artifact name, era, material or origin… e.g. &ldquo;Maratha sword&rdquo;">
+        <button type="submit" class="btn btn-gold">Search</button>
+      </form>
+      <div class="search-chips">
+        <button type="button" class="chip" data-cat="Weaponry">Maratha Swords</button>
+        <button type="button" class="chip" data-cat="Coins &amp; Currency">Ancient Coins</button>
+        <button type="button" class="chip" data-cat="Fort Models">Fort Models</button>
+        <button type="button" class="chip" data-cat="Temple Sculptures">Temple Sculptures</button>
+        <button type="button" class="chip" data-cat="Manuscripts">Manuscripts</button>
+        <button type="button" class="chip" data-cat="Costumes &amp; Textiles">Costumes</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED COLLECTIONS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Browse by Category</span>
+          <h2>Featured Collections</h2>
+          <div class="divider-rule"></div>
+          <p class="desc">Six core collections form the backbone of the museum's archive, each curated and catalogued in partnership with the Directorate of Archaeology &amp; Museums, Maharashtra.</p>
+        </div>
+      </div>
+      <div class="grid grid-3" id="collectionsGrid"></div>
+    </div>
+  </section>
+
+  <!-- FEATURED ARTIFACT -->
+  <section class="section alt">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">From the Vault</span>
+          <h2>Featured Artifacts</h2>
+          <div class="divider-rule"></div>
+          <p class="desc">A rotating selection of recently catalogued and historically significant pieces from the permanent collection.</p>
+        </div>
+        <a href="catalog.html" class="btn btn-outline">View Full Catalog</a>
+      </div>
+      <div class="grid grid-4" id="featuredArtifacts"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT SNIPPET -->
+  <section class="section">
+    <div class="container">
+      <div class="about-snippet">
+        <div class="frame">
+          <svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="150" cy="120" r="92" fill="#F8F4EC" stroke="#D9C7A3" stroke-width="2"/>
+            <path d="M150 50 L172 88 H128 Z" fill="#4A3428"/>
+            <rect x="138" y="88" width="24" height="10" fill="#4A3428"/>
+            <path d="M95 190 V120 H205 V190" stroke="#4A3428" stroke-width="3" fill="none"/>
+            <path d="M95 190 H205" stroke="#B08D57" stroke-width="3"/>
+            <rect x="115" y="140" width="18" height="50" fill="none" stroke="#B08D57" stroke-width="2"/>
+            <rect x="167" y="140" width="18" height="50" fill="none" stroke="#B08D57" stroke-width="2"/>
+            <rect x="141" y="155" width="18" height="35" fill="none" stroke="#B08D57" stroke-width="2"/>
+          </svg>
+        </div>
+        <div>
+          <span class="eyebrow">About the Museum</span>
+          <h2>A Repository of Maharashtra's Cultural Memory</h2>
+          <p>Established under the patronage of the Directorate of Archaeology &amp; Museums, the Maharashtra Heritage Museum has spent over two decades documenting the state's Maratha-era forts, weaponry, coinage and textile traditions. ArtifactVault extends this mission into a searchable digital archive, accessible to students, researchers and the general public.</p>
+          <p>Beyond display, the museum actively manages a loan programme that circulates artifacts to partner institutions, schools and cultural bodies across the state for exhibitions and research.</p>
+          <a href="about.html" class="btn btn-primary">Read Our Full Story</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section alt">
+    <div class="container">
+      <div class="section-head-center">
+        <span class="eyebrow">Visitor Voices</span>
+        <h2>What Visitors Say</h2>
+        <div class="divider-rule"></div>
+      </div>
+      <div class="grid grid-3" id="testimonialsGrid"></div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER-->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand">
+          <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="22" stroke="#B08D57" stroke-width="2"/>
+            <path d="M24 8 L29 16 H19 Z" fill="#D9C7A3"/>
+            <rect x="20" y="16" width="8" height="4" fill="#D9C7A3"/>
+            <path d="M14 38 V24 H34 V38" stroke="#D9C7A3" stroke-width="2" fill="none"/>
+          </svg>
+          <span class="brand-text">
+            <span class="name">ArtifactVault</span>
+            <span class="tag">Maharashtra Heritage Museum</span>
+          </span>
+        </a>
+        <p>A digital catalog and heritage item management system documenting the cultural and martial history of Maharashtra.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="catalog.html">Public Catalog</a></li>
+          <li><a href="about.html">About the Museum</a></li>
+          <li><a href="index.html#collectionsGrid">Collections</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Curator Access</h4>
+        <ul>
+          <li><a href="dashboard.html">Curator Dashboard</a></li>
+          <li><a href="loans.html">Loan Tracking</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit Us</h4>
+        <ul>
+          <li>Heritage Museum Road, Shivajinagar</li>
+          <li>Pune, Maharashtra – 411005</li>
+          <li>Tue–Sun, 10:00 AM – 5:30 PM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span class="current-year">2026</span> ArtifactVault — Maharashtra Heritage Museum. All rights reserved.</span>
+      <span>Academic Project · Department of Computer Applications</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/artifact-illustrations.js"></script>
+<script src="js/api.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

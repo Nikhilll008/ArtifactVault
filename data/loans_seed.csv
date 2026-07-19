@@ -1,0 +1,11 @@
+id,artifact,artifactId,borrower,loanDate,dueDate,status,contact
+LN-3041,Shivaji Maharaj's Royal Letter (Patra),AV-1013,"Chhatrapati Shivaji Maharaj Vastu Sangrahalaya, Mumbai",2026-04-02,2026-07-15,Active,Mr. Vinayak Joshi
+LN-3042,Maratha Gilded Wall Hanging,AV-1018,"Raja Dinkar Kelkar Museum, Pune",2026-03-18,2026-07-02,Active,Ms. Smita Rane
+LN-3043,Maratha Chainmail Armour (Zirah Baktar),AV-1003,"Directorate of Archaeology & Museums, Maharashtra",2026-02-10,2026-05-10,Overdue,Dr. Rahul Kadam
+LN-3044,Hand-painted Paithani Saree,AV-1015,"Textile Heritage Trust, Aurangabad",2026-01-05,2026-04-05,Returned,Ms. Kavita Shinde
+LN-3045,Bronze Vithoba Idol,AV-1011,Pandharpur Wari Heritage Committee,2025-12-20,2026-03-20,Returned,Mr. Sanjay Mane
+LN-3046,Devanagari Stone Inscription,AV-1012,"Shivaji University Archaeology Dept., Kolhapur",2026-05-01,2026-08-01,Active,Prof. Anjali Deshmukh
+LN-3047,Satavahana Copper Coin,AV-1006,"Coin Collectors' Society, Nashik",2025-11-11,2026-02-11,Returned,Mr. Prashant Bhosale
+LN-3048,Kolhapuri Pheta (Turban),AV-1017,"Lokmanya Tilak Cultural Centre, Kolhapur",2026-06-01,2026-07-08,Active,Ms. Pooja Patil
+LN-3049,Lohagad Fort Model,AV-1009,Pune District Education Board (School Exhibit),2026-01-22,2026-04-22,Overdue,Mr. Nitin Pawar
+LN-3050,Peshwa-era Gold Mohur,AV-1005,Numismatic Society of Maharashtra,2025-10-09,2026-01-09,Returned,Dr. Meera Joshi

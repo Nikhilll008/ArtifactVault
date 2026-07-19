@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Public Catalog — ArtifactVault</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="24" cy="24" r="22" stroke="#B08D57" stroke-width="2"/>
+        <path d="M24 8 L29 16 H19 Z" fill="#4A3428"/>
+        <rect x="20" y="16" width="8" height="4" fill="#4A3428"/>
+        <path d="M14 38 V24 H34 V38" stroke="#4A3428" stroke-width="2" fill="none"/>
+        <path d="M14 38 H34" stroke="#B08D57" stroke-width="2"/>
+        <path d="M19 38 V30 H29 V38" stroke="#B08D57" stroke-width="1.6" fill="none"/>
+      </svg>
+      <span class="brand-text">
+        <span class="name">ArtifactVault</span>
+        <span class="tag">Maharashtra Heritage Museum</span>
+      </span>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="catalog.html" class="active">Catalog</a></li>
+        <li><a href="about.html">About Museum</a></li>
+        <li><a href="dashboard.html">Curator Dashboard</a></li>
+        <li><a href="loans.html">Loan Records</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#4A3428" stroke-width="2"><path d="M3 6 H21 M3 12 H21 M3 18 H21" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+  <div class="page-header" id="catalogTop">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Public Catalog</div>
+      <h1>Public Artifact Catalog</h1>
+      <p class="sub">Search and filter the Maharashtra Heritage Museum's digitised collection by era, material and place of origin.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="catalog-layout">
+
+        <aside class="filters-panel">
+          <h3>Refine Results</h3>
+          <div class="filter-group">
+            <label for="catalogSearch">Search</label>
+            <input type="text" id="catalogSearch" placeholder="Artifact name, era, origin…">
+          </div>
+          <div class="filter-group">
+            <label for="filterCategory">Category</label>
+            <select id="filterCategory"></select>
+          </div>
+          <div class="filter-group">
+            <label for="filterEra">Era</label>
+            <select id="filterEra"></select>
+          </div>
+          <div class="filter-group">
+            <label for="filterMaterial">Material</label>
+            <select id="filterMaterial"></select>
+          </div>
+          <div class="filter-group">
+            <label for="filterOrigin">Origin</label>
+            <select id="filterOrigin"></select>
+          </div>
+          <button type="button" id="resetFilters" class="btn btn-outline btn-block">Reset Filters</button>
+        </aside>
+
+        <div>
+          <div class="catalog-toolbar">
+            <span class="count" id="resultCount"></span>
+          </div>
+          <div class="grid grid-3" id="catalogGrid"></div>
+          <div class="empty-state" id="emptyState">
+            <h3>No artifacts match your filters</h3>
+            <p>Try clearing a filter or searching a different keyword such as &ldquo;Paithani&rdquo; or &ldquo;Raigad&rdquo;.</p>
+          </div>
+          <div class="pagination" id="paginationWrap"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand">
+          <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="22" stroke="#B08D57" stroke-width="2"/>
+            <path d="M24 8 L29 16 H19 Z" fill="#D9C7A3"/>
+            <rect x="20" y="16" width="8" height="4" fill="#D9C7A3"/>
+            <path d="M14 38 V24 H34 V38" stroke="#D9C7A3" stroke-width="2" fill="none"/>
+          </svg>
+          <span class="brand-text">
+            <span class="name">ArtifactVault</span>
+            <span class="tag">Maharashtra Heritage Museum</span>
+          </span>
+        </a>
+        <p>A digital catalog and heritage item management system documenting the cultural and martial history of Maharashtra.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="catalog.html">Public Catalog</a></li>
+          <li><a href="about.html">About the Museum</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Curator Access</h4>
+        <ul>
+          <li><a href="dashboard.html">Curator Dashboard</a></li>
+          <li><a href="loans.html">Loan Tracking</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit Us</h4>
+        <ul>
+          <li>Heritage Museum Road, Shivajinagar</li>
+          <li>Pune, Maharashtra – 411005</li>
+          <li>Tue–Sun, 10:00 AM – 5:30 PM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span class="current-year">2026</span> ArtifactVault — Maharashtra Heritage Museum. All rights reserved.</span>
+      <span>Academic Project · Department of Computer Applications</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/artifact-illustrations.js"></script>
+<script src="js/api.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

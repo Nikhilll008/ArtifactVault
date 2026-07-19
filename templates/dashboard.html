@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curator Dashboard — ArtifactVault</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+<div class="login-gate" id="loginGate">
+  <form class="login-card" id="loginForm">
+    <span class="eyebrow">Curator Access</span>
+    <h2>Sign in to ArtifactVault</h2>
+    <p class="login-hint">Demo account — email: <code>curator@artifactvault.example.org</code> · password: <code>Heritage@123</code></p>
+    <label for="loginEmail">Email</label>
+    <input type="email" id="loginEmail" required value="curator@artifactvault.example.org">
+    <label for="loginPassword">Password</label>
+    <input type="password" id="loginPassword" required value="Heritage@123">
+    <div class="login-error" id="loginError"></div>
+    <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+    <p class="login-hint">Backend not running? <a href="dashboard.html" id="skipLogin">Continue with sample data</a></p>
+  </form>
+</div>
+
+<header class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="24" cy="24" r="22" stroke="#B08D57" stroke-width="2"/>
+        <path d="M24 8 L29 16 H19 Z" fill="#4A3428"/>
+        <rect x="20" y="16" width="8" height="4" fill="#4A3428"/>
+        <path d="M14 38 V24 H34 V38" stroke="#4A3428" stroke-width="2" fill="none"/>
+        <path d="M14 38 H34" stroke="#B08D57" stroke-width="2"/>
+        <path d="M19 38 V30 H29 V38" stroke="#B08D57" stroke-width="1.6" fill="none"/>
+      </svg>
+      <span class="brand-text">
+        <span class="name">ArtifactVault</span>
+        <span class="tag">Maharashtra Heritage Museum</span>
+      </span>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="catalog.html">Catalog</a></li>
+        <li><a href="about.html">About Museum</a></li>
+        <li><a href="dashboard.html" class="active">Curator Dashboard</a></li>
+        <li><a href="loans.html">Loan Records</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#4A3428" stroke-width="2"><path d="M3 6 H21 M3 12 H21 M3 18 H21" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="dash-shell">
+  <aside class="dash-sidebar">
+    <div class="curator-card">
+      <div class="avatar" id="curatorAvatar">AD</div>
+      <strong id="curatorName">Dr. Anjali Deshmukh</strong>
+      <span id="curatorRole">Senior Curator</span>
+      <button type="button" class="logout-btn" id="logoutBtn">Sign Out</button>
+    </div>
+    <span class="nav-section-label">Overview</span>
+    <ul class="dash-nav">
+      <li><a href="dashboard.html" class="active">Dashboard</a></li>
+    </ul>
+    <span class="nav-section-label">Collection</span>
+    <ul class="dash-nav">
+      <li><a href="catalog.html">Artifacts</a></li>
+      <li><a href="loans.html">Loan Tracking</a></li>
+      <li><a href="#" onclick="showToast('Curator management is available in the full ArtifactVault system.'); return false;">Curators</a></li>
+    </ul>
+    <span class="nav-section-label">System</span>
+    <ul class="dash-nav">
+      <li><a href="#" onclick="showToast('Settings module is available in the full ArtifactVault system.'); return false;">Settings</a></li>
+    </ul>
+  </aside>
+
+  <main class="dash-main">
+    <div class="dash-topbar">
+      <div>
+        <h1>Curator Overview</h1>
+        <p class="sub" style="margin:0;color:#5b4a3c;">Welcome back, Dr. Anjali Deshmukh — here is today's collection summary.</p>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+        <span class="date" id="dashDate">Sunday, 28 June 2026</span>
+        <span class="backend-pill" id="backendPill">checking backend…</span>
+      </div>
+    </div>
+
+    <div class="overview-cards" id="overviewCards">
+      <div class="overview-card">
+        <div class="top-row">
+          <div><div class="num" id="ovTotal">0</div><div class="lbl">Total Artifacts</div></div>
+          <div class="icon-circle" style="color:var(--gold-dark)" v-icon="artifacts"></div>
+        </div>
+        <div class="trend">+18 catalogued this month</div>
+      </div>
+      <div class="overview-card">
+        <div class="top-row">
+          <div><div class="num" id="ovLoans">0</div><div class="lbl">Active Loans</div></div>
+          <div class="icon-circle" style="color:var(--gold-dark)" v-icon="loan"></div>
+        </div>
+        <div class="trend" style="color:var(--warn)">2 overdue — see Loan Tracking</div>
+      </div>
+      <div class="overview-card">
+        <div class="top-row">
+          <div><div class="num" id="ovPending">0</div><div class="lbl">Returns Due (14 days)</div></div>
+          <div class="icon-circle" style="color:var(--gold-dark)" v-icon="clock"></div>
+        </div>
+        <div class="trend">Review before month end</div>
+      </div>
+      <div class="overview-card">
+        <div class="top-row">
+          <div><div class="num" id="ovCurators">0</div><div class="lbl">Registered Curators</div></div>
+          <div class="icon-circle" style="color:var(--gold-dark)" v-icon="curator"></div>
+        </div>
+        <div class="trend">Across 4 departments</div>
+      </div>
+    </div>
+
+    <div class="dash-panels">
+      <div class="panel">
+        <div class="panel-head">
+          <h3>Recently Added Artifacts</h3>
+          <a href="catalog.html">View Catalog</a>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr><th>ID</th><th>Name</th><th>Category</th><th>Era</th><th>Added</th><th>Status</th><th>Actions</th></tr>
+            </thead>
+            <tbody id="recentTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head"><h3>Collection Statistics</h3></div>
+        <div id="collectionBars"></div>
+      </div>
+    </div>
+
+    <div class="dash-panels">
+      <div class="panel">
+        <div class="panel-head">
+          <h3>Quick Actions</h3>
+        </div>
+        <div class="quick-actions">
+          <button type="button" class="quick-action-btn" data-toast="Add Artifact form is available in the full ArtifactVault system.">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5 V19 M5 12 H19" stroke-linecap="round"/></svg>
+            Add New Artifact
+          </button>
+          <button type="button" class="quick-action-btn" data-toast="New Loan registration is available in the full ArtifactVault system.">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="1.5"/><path d="M3 7 L12 2 L21 7"/></svg>
+            Register New Loan
+          </button>
+          <button type="button" class="quick-action-btn" data-toast="Report generation is available in the full ArtifactVault system.">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3 H15 L19 7 V21 H6 Z"/><path d="M9 13 H15 M9 17 H15"/></svg>
+            Generate Report
+          </button>
+          <button type="button" class="quick-action-btn" data-toast="Bulk image upload is available in the full ArtifactVault system.">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 16 V4 M7 9 L12 4 L17 9"/><path d="M4 16 V19 H20 V16"/></svg>
+            Upload Images
+          </button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h3>Loan Tracking Summary</h3>
+          <a href="loans.html">View All</a>
+        </div>
+        <ul class="loan-mini-list" id="loanSummaryList"></ul>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/api.js"></script>
+<script src="js/script.js"></script>
+<script>
+
+  document.querySelectorAll('[v-icon]').forEach(function (el) {
+    el.innerHTML = ICONS[el.getAttribute('v-icon')] || '';
+  });
+</script>
+</body>
+</html>
